@@ -32,7 +32,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Define Routes
 
-
+router.route('/')
+	.get(function(req,res,next){
+		res.json({
+			message:"my home page"
+		})
+	})
 router.route('/auth')
 .post(userController.getRegistration(jwt,config.passcode))
 
